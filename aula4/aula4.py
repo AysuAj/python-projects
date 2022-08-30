@@ -17,4 +17,3 @@ print(nome, type(nome))
 print(idade, type(idade), type(float(idade)))
 
 print('10', type('10'), type(int('10')))
-
