@@ -1,8 +1,6 @@
 import enum
+from random import randrange
 
-
-palavra = 'samambaia'
-newPalavra = ''
 
 print('-='*40)
 print(' ')
@@ -12,7 +10,18 @@ print('-='*40)
 print(' ')
 print(' ')
 
+palavra = str(input('Informe a palavra: '))
+# divPalavra = palavra.split()
+# listPalavra = list(divPalavra)
 LARG_PALAVRA = len(palavra)
+newPalavra = list()
+listPalavra = list()
+
+for elemento in palavra:
+    listPalavra.append(elemento)
+
+for elemento in range(0, LARG_PALAVRA):
+    newPalavra.append('_')
 
 print(f'A palavra tem {LARG_PALAVRA} letras.')
 
@@ -26,13 +35,9 @@ while True:
 
     if choose == 1:
         letra = str(input('Digite uma letra: '))
-        for elemento in palavra:
+        for enum, elemento in enumerate(listPalavra):
             if letra == elemento:
-                    newPalavra += elemento
-                    pass
-                
-            else:
-                newPalavra += '_'
+                newPalavra.insert(enum, letra)
     
     elif choose == 2:
         digPalavra = str(input('Digite a palavra: '))
